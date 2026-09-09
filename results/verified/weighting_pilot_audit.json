@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "test_metrics_found": false,
+  "coalition_reports_verified": 192,
+  "selected_candidate": "shapley-60-raw",
+  "selection_rule": "highest mean validation macro-F1; predefined simplicity tie-break",
+  "pilot_summary_sha256": "48b33c4ce91276d5bf095b0ec49efb59d78d4845db29154d2c09590b4b7da04c",
+  "per_seed_validation_macro_f1": {
+    "11": {
+      "uniform": 0.8696474406038153,
+      "shapley-20-raw": 0.8757180489207825,
+      "shapley-20-shrink-50": 0.8722517631429882,
+      "shapley-60-raw": 0.8961322450360133,
+      "shapley-60-shrink-50": 0.8802721875999694
+    },
+    "23": {
+      "uniform": 0.8698530158482706,
+      "shapley-20-raw": 0.8774677360721165,
+      "shapley-20-shrink-50": 0.8615938230528791,
+      "shapley-60-raw": 0.8757503863011707,
+      "shapley-60-shrink-50": 0.8586610977815482
+    },
+    "37": {
+      "uniform": 0.856465406383016,
+      "shapley-20-raw": 0.8696118750673371,
+      "shapley-20-shrink-50": 0.8641813180836732,
+      "shapley-60-raw": 0.8761380125669224,
+      "shapley-60-shrink-50": 0.8634965804435889
+    }
+  },
+  "summary_rows": [
+    {
+      "candidate": "shapley-20-raw",
+      "runs": 3,
+      "validation_macro_f1_mean": 0.8742658866867453,
+      "validation_macro_f1_sd": 0.004124344723356228,
+      "wins_vs_uniform": 3
+    },
+    {
+      "candidate": "shapley-20-shrink-50",
+      "runs": 3,
+      "validation_macro_f1_mean": 0.8660089680931802,
+      "validation_macro_f1_sd": 0.005559060186670679,
+      "wins_vs_uniform": 2
+    },
+    {
+      "candidate": "shapley-60-raw",
+      "runs": 3,
+      "validation_macro_f1_mean": 0.8826735479680354,
+      "validation_macro_f1_sd": 0.011657184849103636,
+      "wins_vs_uniform": 3
+    },
+    {
+      "candidate": "shapley-60-shrink-50",
+      "runs": 3,
+      "validation_macro_f1_mean": 0.8674766219417022,
+      "validation_macro_f1_sd": 0.01134197286762734,
+      "wins_vs_uniform": 2
+    },
+    {
+      "candidate": "uniform",
+      "runs": 3,
+      "validation_macro_f1_mean": 0.8653219542783673,
+      "validation_macro_f1_sd": 0.007670684178238026,
+      "wins_vs_uniform": 0
+    }
+  ]
+}

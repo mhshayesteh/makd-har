@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+venv/
+.ipynb_checkpoints/
+results/uci/
+results/wisdm/
+results/**/production*/
+*.keras
+*.h5
+*.ckpt
+resources/
+data/
+datasets/
+UCI HAR Dataset/
+UCI HAR Dataset.zip
+WISDM_ar_v1.1_raw.txt
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
+*.log

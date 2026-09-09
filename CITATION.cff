@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "MAKD-HAR: Cooperative Multi-Agent Knowledge Distillation for Human Activity Recognition"
+type: software
+authors:
+  - family-names: "Shayesteh"
+    given-names: "Mohammad H."
+  - family-names: "Shahrokhzadeh"
+    given-names: "Behrooz"
+  - family-names: "Gholipour"
+    given-names: "Majid"
+  - family-names: "Masoumi"
+    given-names: "Behrooz"
+  - family-names: "Kelishomi"
+    given-names: "Aghil E."
