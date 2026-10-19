@@ -1,0 +1,147 @@
+{
+  "groups": {
+    "stop": [
+      9,
+      19,
+      27
+    ],
+    "value": [
+      5,
+      6,
+      35
+    ],
+    "select": [
+      15,
+      24,
+      33
+    ],
+    "fit": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      13,
+      14,
+      17,
+      18,
+      25,
+      29,
+      32,
+      36
+    ]
+  },
+  "coverage": {
+    "fit": {
+      "subjects": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        13,
+        14,
+        17,
+        18,
+        25,
+        29,
+        32,
+        36
+      ],
+      "samples": 6191,
+      "class_counts": {
+        "0": 2352,
+        "1": 2097,
+        "2": 259,
+        "3": 259,
+        "4": 714,
+        "5": 510
+      },
+      "subjects_per_class": {
+        "0": 13,
+        "1": 13,
+        "2": 8,
+        "3": 8,
+        "4": 11,
+        "5": 11
+      }
+    },
+    "stop": {
+      "subjects": [
+        9,
+        19,
+        27
+      ],
+      "samples": 1410,
+      "class_counts": {
+        "0": 661,
+        "1": 435,
+        "2": 69,
+        "3": 56,
+        "4": 107,
+        "5": 82
+      },
+      "subjects_per_class": {
+        "0": 3,
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2
+      }
+    },
+    "value": {
+      "subjects": [
+        5,
+        6,
+        35
+      ],
+      "samples": 1208,
+      "class_counts": {
+        "0": 489,
+        "1": 475,
+        "2": 73,
+        "3": 47,
+        "4": 64,
+        "5": 60
+      },
+      "subjects_per_class": {
+        "0": 3,
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 2,
+        "5": 2
+      }
+    },
+    "select": {
+      "subjects": [
+        15,
+        24,
+        33
+      ],
+      "samples": 1219,
+      "class_counts": {
+        "0": 500,
+        "1": 430,
+        "2": 58,
+        "3": 31,
+        "4": 86,
+        "5": 114
+      },
+      "subjects_per_class": {
+        "0": 3,
+        "1": 3,
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3
+      }
+    }
+  },
+  "permutation_seed": 20261018,
+  "eligibility": "Original production training subjects only; original validation and test excluded",
+  "allocation": "Each held-out role round(0.15*n_subjects), minimum two; fitting uses remainder",
+  "feasibility": "Every role has >=20 windows and >=2 distinct subjects for each of six classes",
+  "choice": "First feasible permutation among seeds 20261018 + offset, offset 0..9999; metadata only"
+}

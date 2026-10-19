@@ -20,9 +20,13 @@ def _tensorflow():
 
 
 def classification_metrics(y_true: np.ndarray, logits: np.ndarray) -> dict[str, object]:
+    return classification_metrics_from_labels(y_true, np.asarray(logits).argmax(axis=1))
+
+
+def classification_metrics_from_labels(y_true: np.ndarray, predictions: np.ndarray) -> dict[str, object]:
     from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
-    predictions = np.asarray(logits).argmax(axis=1)
+    predictions = np.asarray(predictions)
     return {
         "accuracy": float(accuracy_score(y_true, predictions)),
         "macro_f1": float(f1_score(y_true, predictions, average="macro", zero_division=0)),

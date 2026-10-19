@@ -1,0 +1,5 @@
+* text=auto
+
+# Hash-checked experiment sources must survive Windows/Linux checkouts unchanged.
+/revision_2/** -text whitespace=cr-at-eol
+/revised_pipeline/run_experiment.py -text whitespace=cr-at-eol

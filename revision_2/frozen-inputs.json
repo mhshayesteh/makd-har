@@ -1,0 +1,81 @@
+{
+  "baseline": "Author-confirmed submitted revision-1 v10",
+  "datasets": {
+    "uci": {
+      "seed_records": {
+        "11": "results/uci/production/seed-11.json",
+        "23": "results/uci/production/seed-23.json",
+        "37": "results/uci/production/seed-37.json"
+      },
+      "source_files": {
+        "resources/UCI HAR Dataset.zip": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0",
+        "results/uci/production/seed-11.json": "336413cfbf7bab0e3479fcf00b5d25f2505782b76c996cd7831bc869b541ece0",
+        "results/uci/production/seed-11/models/teacher-hcf_mlp.keras": "ae6d274678ef65ab49c05b65575dc9f58bded4e079159d95c927b84a9952ce2c",
+        "results/uci/production/seed-11/models/teacher-lstm.keras": "4d986c603bcb9579899f9b21ef542bb5d7962da57386a429e97694bd15ed530c",
+        "results/uci/production/seed-11/models/teacher-raw_cnn.keras": "72dbf157fc2789b5a8f732d45163e6ca44ec8bb62ca2377fabcb7a0b75f5e940",
+        "results/uci/production/seed-11/models/teacher-tcn.keras": "83277b30e989fb06575697854502e9c8249af0c9835684fda8c7332e6d7d85ce",
+        "results/uci/production/seed-11/models/teacher-transformer.keras": "8b69782fbba46b0b45424ab6542748a014aa27e0896b38d5f63c5a5f756139ec",
+        "results/uci/production/seed-23.json": "f1790cf5ead9de153a4407d579f7d0cbf03b4105880adf3bc216d5057f476aee",
+        "results/uci/production/seed-23/models/teacher-hcf_mlp.keras": "3824996303d6abed92f7072d1161d8753520e5cd9fd7b6dafebe4a0969b92366",
+        "results/uci/production/seed-23/models/teacher-lstm.keras": "0ccb6478089e08fd4d1712ff62db66aba525724db9b897089b2c6b6fdeeae32f",
+        "results/uci/production/seed-23/models/teacher-raw_cnn.keras": "35217800f3ea94e4283a3a5d844701febeedf1bf2c22d47ea16c39172bcedf89",
+        "results/uci/production/seed-23/models/teacher-tcn.keras": "8a965bcc44e7f27d1c429c31ca3162c648b527d7f00e8228646232f30e370ec6",
+        "results/uci/production/seed-23/models/teacher-transformer.keras": "25568cdca862e9e291d9bef932a2d66bec25ec69e420b091d31b750e01eab972",
+        "results/uci/production/seed-37.json": "12dfdc629e3fa609ebe6070a52b0c1ae14299e5d21cc89485d38d8f891b4333c",
+        "results/uci/production/seed-37/models/teacher-hcf_mlp.keras": "5bceb9e2687b04c74e73f512ff641a4145107c49e6df626953f1aaae2fbbe518",
+        "results/uci/production/seed-37/models/teacher-lstm.keras": "cf33592b941a2109187425367cc3cb2a5680ba2219d9c568dc7fd44f6c5e88b3",
+        "results/uci/production/seed-37/models/teacher-raw_cnn.keras": "9f780ead918862b131bdef5440ccab1a776b5596a3dc5a2b96f755a939521666",
+        "results/uci/production/seed-37/models/teacher-tcn.keras": "8786ded5e96f34bb11ce730a95ae3cd12585eabc758617a47b9f52e82d8cd177",
+        "results/uci/production/seed-37/models/teacher-transformer.keras": "fa5150661e67f66db03bb2b37c9b5abb6e78d74e48a45a9721c8bb3f723ce012"
+      }
+    },
+    "wisdm": {
+      "seed_records": {
+        "11": "results/wisdm/production-v2/seed-11.json",
+        "23": "results/wisdm/production-v2/seed-23.json",
+        "37": "results/wisdm/production-v2/seed-37.json"
+      },
+      "source_files": {
+        "resources/WISDM_ar_v1.1_raw.txt": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+        "results/wisdm/production-v2/seed-11.json": "a7a670b56640f740146fece8b3e8a428f3838019bf5f00f9a6a98b1a023c9711",
+        "results/wisdm/production-v2/seed-11/models/teacher-hcf_mlp.keras": "d759fb8fd49a494f624bd337e2c7ce1e9a9ce0df37c3f5a1c5aed0ebf5e8c8a1",
+        "results/wisdm/production-v2/seed-11/models/teacher-lstm.keras": "3525dc1b7798f6d78a6a06109fbaf606f72cb75b48b46687cd30bacdf0b0ecdb",
+        "results/wisdm/production-v2/seed-11/models/teacher-raw_cnn.keras": "fba31699eea86b2c7bf19d3984aae3b102081ef8f1a9cdc7d13b97ee78a1e283",
+        "results/wisdm/production-v2/seed-11/models/teacher-tcn.keras": "eb59e96fbd9763b3d7d50a1799e60585fc0a7b4f0c3a478881534628f7bd0275",
+        "results/wisdm/production-v2/seed-11/models/teacher-transformer.keras": "245bed5cfcc4d5c9f514beede4c6a025117875d3757974cf28d07ba95658d42b",
+        "results/wisdm/production-v2/seed-23.json": "0d7c309f582b47ef53eef7ab2580c7e181882e0668d4ff4a66e38bde572bc0d3",
+        "results/wisdm/production-v2/seed-23/models/teacher-hcf_mlp.keras": "1d7863ff35b0f327d78b14bfd6f0b899fc6040de61b8dfc4b642f5957fa99bd0",
+        "results/wisdm/production-v2/seed-23/models/teacher-lstm.keras": "8de48f0e0a8913ea59e59d2a593250544994b03e1ddc5e34c4e8b275f8485de9",
+        "results/wisdm/production-v2/seed-23/models/teacher-raw_cnn.keras": "b17fc9043da17ad118bfe457b79a04da18b9a6b542bfd7ffe44d839b413dcd80",
+        "results/wisdm/production-v2/seed-23/models/teacher-tcn.keras": "184aab33d89f54da834ad688a5616f0ec593e545aa32d253c530a0b506405ef9",
+        "results/wisdm/production-v2/seed-23/models/teacher-transformer.keras": "de6598dbce07c1130f418b432619b1d1811631d6fb5c2b59603be67ec32c5f5d",
+        "results/wisdm/production-v2/seed-37.json": "1b8a1cc3c89ed1f007c5320ea4bf74100318d8863868e4e8db3200fd3742b803",
+        "results/wisdm/production-v2/seed-37/models/teacher-hcf_mlp.keras": "e3761751c75dd304437fe95117ec520a142beef527bada3c1aa9f0b6121850a5",
+        "results/wisdm/production-v2/seed-37/models/teacher-lstm.keras": "19218081cc3d7ffe54e81200af3946536e7bee277fc2753cf0ca73aa03715b45",
+        "results/wisdm/production-v2/seed-37/models/teacher-raw_cnn.keras": "28c277d4a2dc783ad1cb4e3067ca5274f1c109ca9e24fda9436697bb88fa7473",
+        "results/wisdm/production-v2/seed-37/models/teacher-tcn.keras": "710ee978dcccb9afb8371a7cf33a7c1461c66fc8f73acfc04f65ff8d5d6e6480",
+        "results/wisdm/production-v2/seed-37/models/teacher-transformer.keras": "95b15261831261163f8d28d4164f226fa7ba534df07ec682dbce8fba72ab48ad"
+      }
+    }
+  },
+  "date": "2026-10-17",
+  "limitation": "Hashes freeze the present saved checkpoints; original training-time hashes were not recorded.",
+  "protocol": "revision2-coalition-noise-v1",
+  "runtime_files": {
+    "pipeline_snapshot/build_revised_notebooks.py": "fb5be1273574da8f07f8c36c1adc3657a6a1dcb670be1d88d34a46b12912bd4f",
+    "pipeline_snapshot/makd_har/__init__.py": "1f3b410ee63c1d193a9a6842cb2ae1a2f1429d5ba14e0b440ca40e91159214b5",
+    "pipeline_snapshot/makd_har/config.py": "e108fedfa3016a690f98e81e7b6c06a0582c01b70ceaab3d1f9e9edbdba03760",
+    "pipeline_snapshot/makd_har/data.py": "487ff8e38b1a281785d0e141ff8bdb796b132866564f91397526324e1962fc66",
+    "pipeline_snapshot/makd_har/models.py": "b08dd044dfde3a1eef6fce1697c82aa4f13b36b31cceddda55ee05e4b0f7cc1b",
+    "pipeline_snapshot/makd_har/reproducibility.py": "8204430a38aad7bed724f19dec5d556695e635fa710da1b3b45e43e054f1d9d8",
+    "pipeline_snapshot/makd_har/shapley.py": "6ba2dbc3744cc546a1b2c3fbceb33f90c00b88111ebfa8089b6fe29082c4273e",
+    "pipeline_snapshot/makd_har/training.py": "9807537c41341077b3302fc08635fa3f5bf803bf68be12774ddd5030a4a51eb0",
+    "pipeline_snapshot/requirements-colab.txt": "0fab8b39128fca7f22943b21bcfed819f5a23de1ba18c55d0f4625aa8a4b8b15",
+    "pipeline_snapshot/run_experiment.py": "c625dc0b86c495faef92207d3fdf95efe120cee40c02b8bfd840f56b2d786758",
+    "pipeline_snapshot/run_weighting_pilot.py": "dc6bdf63a2fbfe7974d9218cba10eec393b634d10cb55f1ba9bd8c94873bb6b9",
+    "pipeline_snapshot/summarize_results.py": "d824db4e1825e26f0d518629ae460cca4f36b96ec7b1887b85c5947aff97b802",
+    "pipeline_snapshot/tests/test_corrections.py": "02c94bfc1058f0575df6dbff0f65d51e7e1c609d39882caf2a27a5744c9d4aa5",
+    "pipeline_snapshot/tests/test_pipeline.py": "8469a95909b1e7d85a0b069b4a5650a163de080482df5578de0d37378a3b97fa",
+    "run_coalition_noise.py": "effb20761f54fe4ad1dcb29b083209a8e4cc2f65d92ef274758cf920a895acc9"
+  }
+}

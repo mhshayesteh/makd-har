@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the associated paper."
-title: "MAKD-HAR: Cooperative Multi-Agent Knowledge Distillation for Human Activity Recognition"
+title: "Shapley Based Multi Teacher Knowledge Distillation for Human Activity Recognition"
+repository-code: "https://github.com/mhshayesteh/makd-har"
 type: software
 authors:
   - family-names: "Shayesteh"

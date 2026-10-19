@@ -15,6 +15,7 @@ class ExperimentConfig:
     partition stays fixed while initialization and minibatch order vary.
     """
 
+    protocol_version: str = "records-v2-predict-v2"
     split_seed: int = 2026
     model_seeds: tuple[int, ...] = DEFAULT_SEEDS
     validation_fraction: float = 0.20

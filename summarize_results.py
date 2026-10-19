@@ -43,7 +43,12 @@ def main() -> None:
         per_method[method] = values
         mean = float(values.mean())
         std = float(values.std(ddof=1)) if len(values) > 1 else 0.0
-        ci95 = 1.96 * std / math.sqrt(len(values)) if len(values) > 1 else 0.0
+        if len(values) > 1:
+            from scipy.stats import t
+
+            ci95 = float(t.ppf(0.975, df=len(values) - 1)) * std / math.sqrt(len(values))
+        else:
+            ci95 = 0.0
         accuracies = np.asarray(
             [run["methods"][method]["test"]["accuracy"] for run in runs], dtype=float
         )
@@ -56,6 +61,12 @@ def main() -> None:
                 "macro_f1_mean": mean,
                 "macro_f1_sd": std,
                 "macro_f1_ci95_half_width": ci95,
+                "variability_note": (
+                    "Fixed deterministic reference repeated in seed records; do not interpret "
+                    "the repeated copies as independent SVM runs."
+                    if method == "svm"
+                    else "Model-seed variability on one fixed subject split."
+                ),
             }
         )
 
@@ -86,6 +97,11 @@ def main() -> None:
                     )
                     if differences.std(ddof=1) > 0
                     else None,
+                    "comparison_design": (
+                        "Student-seed differences against one fixed deterministic SVM reference."
+                        if method == "svm"
+                        else "Matched model seeds on one fixed subject split."
+                    ),
                 }
             )
         for row, adjusted in zip(tests, holm_adjust(raw_p_values)):

@@ -10,7 +10,7 @@ import numpy as np
 from makd_har.config import DEFAULT_SEEDS, ExperimentConfig
 from makd_har.data import DatasetBundle, load_uci_har, load_wisdm_v1
 from makd_har.models import baseline_registry, build_student, teacher_registry
-from makd_har.reproducibility import set_global_seed, write_json_atomic
+from makd_har.reproducibility import file_sha256, set_global_seed, write_json_atomic
 from makd_har.shapley import (
     exact_shapley,
     permutation_shapley,
@@ -22,6 +22,7 @@ from makd_har.training import (
     aggregate_teacher_probabilities,
     benchmark_latency,
     classification_metrics,
+    classification_metrics_from_labels,
     logits_to_probabilities,
     model_footprint,
     predict_logits,
@@ -48,6 +49,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--patience", type=int, default=10)
     parser.add_argument("--quick", action="store_true", help="One short smoke-test run")
     parser.add_argument("--verbose", type=int, default=0, choices=(0, 1, 2))
+    parser.add_argument("--protocol-version", default="records-v2-predict-v2")
+    parser.add_argument("--selection-record", type=Path, default=None)
     return parser.parse_args()
 
 
@@ -236,12 +239,12 @@ def tune_and_evaluate_svm(bundle: DatasetBundle) -> dict[str, object]:
     started = time.perf_counter()
     predictions = best_model.predict(bundle.features_test)
     elapsed = time.perf_counter() - started
-    decision = best_model.decision_function(bundle.features_test)
     return {
         "selected_params": best_params,
         "tuning_results": tuning_results,
         "validation_macro_f1": best_f1,
-        "test": classification_metrics(bundle.y_test, decision),
+        "test": classification_metrics_from_labels(bundle.y_test, predictions),
+        "prediction_rule": "SVC.predict for validation and test",
         "inference": {
             "batch_total_seconds": elapsed,
             "samples": int(len(bundle.y_test)),
@@ -446,6 +449,7 @@ def main() -> None:
     if args.quick:
         seeds = seeds[:1]
     config = ExperimentConfig(
+        protocol_version=args.protocol_version,
         model_seeds=seeds,
         teacher_epochs=2 if args.quick else args.teacher_epochs,
         student_epochs=2 if args.quick else args.student_epochs,
@@ -458,6 +462,21 @@ def main() -> None:
         latency_repetitions=5 if args.quick else 300,
     )
     config.validate()
+    selection_provenance = None
+    if args.selection_record is not None:
+        selection = json.loads(args.selection_record.read_text(encoding="utf-8"))
+        if selection.get("protocol_version") != config.protocol_version:
+            raise RuntimeError("Selection record and run protocol versions differ")
+        if int(selection.get("coalition_epochs", -1)) != config.coalition_epochs:
+            raise RuntimeError("Selection record and coalition epoch settings differ")
+        if selection.get("selected_candidate") != "shapley-60-raw":
+            raise RuntimeError("This production implementation expects shapley-60-raw")
+        if float(selection.get("uniform_shrinkage", -1)) != 0.0:
+            raise RuntimeError("This production implementation expects no weight shrinkage")
+        selection_provenance = {
+            "record": selection,
+            "record_sha256": file_sha256(args.selection_record),
+        }
     bundle = load_dataset(args, config)
     args.output.mkdir(parents=True, exist_ok=True)
     ensure_same_or_write(args.output / "dataset-manifest.json", bundle.manifest())
@@ -469,6 +488,8 @@ def main() -> None:
             continue
         print(f"Running {bundle.name}, seed {seed}")
         result = run_seed(bundle, config, seed, args.output, args.verbose)
+        if selection_provenance is not None:
+            result["selection_provenance"] = selection_provenance
         write_json_atomic(result_path, result)
         print(f"Completed seed {seed}: {result_path}")
 
